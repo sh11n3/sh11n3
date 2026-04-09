@@ -5,6 +5,9 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write   
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,10 +15,10 @@ jobs:
     steps:
       - uses: abozanona/pacman-contribution-graph@main
         with:
-          github_user_name: sh11n3
+          github_user_name: sh1ln3
 
       - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: output
           build_dir: dist
